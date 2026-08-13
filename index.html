@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciador de Tarefas Acadêmicas</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Gerenciador de Tarefas Acadêmicas</h1>
+    </header>
+
+    <main>
+
+        <section aria-labelledby="busca-filtros">
+            <h2 id="busca-filtros">Busca e filtros</h2>
+
+            <form>
+                <label for="busca">Buscar tarefa por título:</label>
+                <input type="search" id="busca" name="busca">
+
+                <fieldset>
+                    <legend>Status</legend>
+
+                    <input type="radio" id="todos-status" name="status" value="todos">
+                    <label for="todos-status">Todos</label>
+
+                    <input type="radio" id="a-fazer" name="status" value="a-fazer">
+                    <label for="a-fazer">A fazer</label>
+
+                    <input type="radio" id="andamento" name="status" value="andamento">
+                    <label for="andamento">Em andamento</label>
+
+                    <input type="radio" id="revisao" name="status" value="revisao">
+                    <label for="revisao">Em revisão</label>
+
+                    <input type="radio" id="concluida" name="status" value="concluida">
+                    <label for="concluida">Concluída</label>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Prioridade</legend>
+
+                    <input type="radio" id="todas-prioridades" name="prioridade" value="todas">
+                    <label for="todas-prioridades">Todas</label>
+
+                    <input type="radio" id="baixa" name="prioridade" value="baixa">
+                    <label for="baixa">Baixa</label>
+
+                    <input type="radio" id="media" name="prioridade" value="media">
+                    <label for="media">Média</label>
+
+                    <input type="radio" id="alta" name="prioridade" value="alta">
+                    <label for="alta">Alta</label>
+                </fieldset>
+            </form>
+        </section>
+
+
+        <section aria-labelledby="status-fazer">
+            <h2 id="status-fazer">A fazer</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Fazer trabalho de HTML</h3>
+                        <p>Projeto: Site acadêmico</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 15/08/2026</p>
+                        <p>Prioridade: Alta</p>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <h3>Pesquisar referências</h3>
+                        <p>Projeto: Site acadêmico</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 16/08/2026</p>
+                        <p>Prioridade: Média</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+
+        <section aria-labelledby="status-andamento">
+            <h2 id="status-andamento">Em andamento</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Criar página do projeto</h3>
+                        <p>Projeto: Portal acadêmico</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 18/08/2026</p>
+                        <p>Prioridade: Alta</p>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <h3>Organizar informações</h3>
+                        <p>Projeto: Portal acadêmico</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 20/08/2026</p>
+                        <p>Prioridade: Baixa</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+
+        <section aria-labelledby="status-revisao">
+            <h2 id="status-revisao">Em revisão</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Revisar o conteúdo</h3>
+                        <p>Projeto: Sistema de biblioteca</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 22/08/2026</p>
+                        <p>Prioridade: Média</p>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <h3>Revisar os requisitos</h3>
+                        <p>Projeto: Sistema de biblioteca</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 23/08/2026</p>
+                        <p>Prioridade: Alta</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+
+        <section aria-labelledby="status-concluida">
+            <h2 id="status-concluida">Concluída</h2>
+
+            <ul>
+                <li>
+                    <article>
+                        <h3>Definir o projeto</h3>
+                        <p>Projeto: Aplicativo de estudos</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 10/08/2026</p>
+                        <p>Prioridade: Baixa</p>
+                    </article>
+                </li>
+
+                <li>
+                    <article>
+                        <h3>Fazer reunião do grupo</h3>
+                        <p>Projeto: Aplicativo de estudos</p>
+                        <p>Responsável: Felipe</p>
+                        <p>Prazo: 11/08/2026</p>
+                        <p>Prioridade: Média</p>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Felipe Martins Sudré</p>
+        <p>Desenvolvimento Frontend — 2026.2</p>
+    </footer>
+
+</body>
+</html>
