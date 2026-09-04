@@ -1,0 +1,12 @@
+{
+  "tarefas": [
+    { "id": 1, "titulo": "Fazer trabalho de HTML", "status": "a-fazer", "prioridade": "Alta", "prazo": "15/08/2026" },
+    { "id": 2, "titulo": "Pesquisar referências bibliográficas do projeto de portal acadêmico", "status": "a-fazer", "prioridade": "Média", "prazo": "16/08/2026" },
+    { "id": 3, "titulo": "Criar página do projeto", "status": "andamento", "prioridade": "Alta", "prazo": "18/08/2026" },
+    { "id": 4, "titulo": "Organizar informações", "status": "andamento", "prioridade": "Baixa", "prazo": "20/08/2026" },
+    { "id": 5, "titulo": "Revisar o conteúdo", "status": "revisao", "prioridade": "Média", "prazo": "22/08/2026" },
+    { "id": 6, "titulo": "Revisar os requisitos", "status": "revisao", "prioridade": "Alta", "prazo": "23/08/2026" },
+    { "id": 7, "titulo": "Definir o projeto", "status": "concluida", "prioridade": "Baixa", "prazo": "10/08/2026" },
+    { "id": 8, "titulo": "Fazer reunião do grupo", "status": "concluida", "prioridade": "Média", "prazo": "11/08/2026" }
+  ]
+}
