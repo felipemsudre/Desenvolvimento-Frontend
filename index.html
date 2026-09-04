@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Gerenciador de Tarefas Acadêmicas</title>
 </head>
 
@@ -58,113 +59,31 @@
             </form>
         </section>
 
+        <div id="status" role="status" aria-live="polite"></div>
 
-        <section aria-labelledby="status-fazer">
-            <h2 id="status-fazer">A fazer</h2>
+        <div id="quadro">
 
-            <ul>
-                <li>
-                    <article>
-                        <h3>Fazer trabalho de HTML</h3>
-                        <p>Projeto: Site acadêmico</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 15/08/2026</p>
-                        <p>Prioridade: Alta</p>
-                    </article>
-                </li>
+            <section aria-labelledby="status-fazer">
+                <h2 id="status-fazer">A fazer</h2>
+                <ul id="lista-a-fazer"></ul>
+            </section>
 
-                <li>
-                    <article>
-                        <h3>Pesquisar referências</h3>
-                        <p>Projeto: Site acadêmico</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 16/08/2026</p>
-                        <p>Prioridade: Média</p>
-                    </article>
-                </li>
-            </ul>
-        </section>
+            <section aria-labelledby="status-andamento">
+                <h2 id="status-andamento">Em andamento</h2>
+                <ul id="lista-andamento"></ul>
+            </section>
 
+            <section aria-labelledby="status-revisao">
+                <h2 id="status-revisao">Em revisão</h2>
+                <ul id="lista-revisao"></ul>
+            </section>
 
-        <section aria-labelledby="status-andamento">
-            <h2 id="status-andamento">Em andamento</h2>
+            <section aria-labelledby="status-concluida">
+                <h2 id="status-concluida">Concluída</h2>
+                <ul id="lista-concluida"></ul>
+            </section>
 
-            <ul>
-                <li>
-                    <article>
-                        <h3>Criar página do projeto</h3>
-                        <p>Projeto: Portal acadêmico</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 18/08/2026</p>
-                        <p>Prioridade: Alta</p>
-                    </article>
-                </li>
-
-                <li>
-                    <article>
-                        <h3>Organizar informações</h3>
-                        <p>Projeto: Portal acadêmico</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 20/08/2026</p>
-                        <p>Prioridade: Baixa</p>
-                    </article>
-                </li>
-            </ul>
-        </section>
-
-
-        <section aria-labelledby="status-revisao">
-            <h2 id="status-revisao">Em revisão</h2>
-
-            <ul>
-                <li>
-                    <article>
-                        <h3>Revisar o conteúdo</h3>
-                        <p>Projeto: Sistema de biblioteca</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 22/08/2026</p>
-                        <p>Prioridade: Média</p>
-                    </article>
-                </li>
-
-                <li>
-                    <article>
-                        <h3>Revisar os requisitos</h3>
-                        <p>Projeto: Sistema de biblioteca</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 23/08/2026</p>
-                        <p>Prioridade: Alta</p>
-                    </article>
-                </li>
-            </ul>
-        </section>
-
-
-        <section aria-labelledby="status-concluida">
-            <h2 id="status-concluida">Concluída</h2>
-
-            <ul>
-                <li>
-                    <article>
-                        <h3>Definir o projeto</h3>
-                        <p>Projeto: Aplicativo de estudos</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 10/08/2026</p>
-                        <p>Prioridade: Baixa</p>
-                    </article>
-                </li>
-
-                <li>
-                    <article>
-                        <h3>Fazer reunião do grupo</h3>
-                        <p>Projeto: Aplicativo de estudos</p>
-                        <p>Responsável: Felipe</p>
-                        <p>Prazo: 11/08/2026</p>
-                        <p>Prioridade: Média</p>
-                    </article>
-                </li>
-            </ul>
-        </section>
+        </div>
 
     </main>
 
@@ -173,5 +92,6 @@
         <p>Desenvolvimento Frontend — 2026.2</p>
     </footer>
 
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
