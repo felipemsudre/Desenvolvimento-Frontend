@@ -20,12 +20,12 @@
 
             <form>
                 <label for="busca">Buscar tarefa por título:</label>
-                <input type="search" id="busca" name="busca">
+                <textarea id="busca" placeholder="Buscar por título..." rows="1"></textarea>
 
                 <fieldset>
                     <legend>Status</legend>
 
-                    <input type="radio" id="todos-status" name="status" value="todos">
+                    <input type="radio" id="todos-status" name="status" value="todos" checked>
                     <label for="todos-status">Todos</label>
 
                     <input type="radio" id="a-fazer" name="status" value="a-fazer">
@@ -44,7 +44,7 @@
                 <fieldset>
                     <legend>Prioridade</legend>
 
-                    <input type="radio" id="todas-prioridades" name="prioridade" value="todas">
+                    <input type="radio" id="todas-prioridades" name="prioridade" value="todas" checked>
                     <label for="todas-prioridades">Todas</label>
 
                     <input type="radio" id="baixa" name="prioridade" value="baixa">
@@ -56,6 +56,14 @@
                     <input type="radio" id="alta" name="prioridade" value="alta">
                     <label for="alta">Alta</label>
                 </fieldset>
+
+                <label for="ordenacao">Ordenar por prazo:</label>
+                <select id="ordenacao" name="ordenacao">
+                    <option value="prazo-crescente">Mais próximo primeiro</option>
+                    <option value="prazo-decrescente">Mais distante primeiro</option>
+                </select>
+
+                <button type="button" id="limpar-filtros">Limpar filtros</button>
             </form>
         </section>
 
@@ -92,6 +100,6 @@
         <p>Desenvolvimento Frontend — 2026.2</p>
     </footer>
 
-    <script type="module" src="js/app.js"></script>
+    <script type="module" src="app.js"></script>
 </body>
 </html>
