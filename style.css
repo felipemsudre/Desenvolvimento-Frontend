@@ -47,7 +47,9 @@ body {
   line-height: 1.55;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-family: 'Press Start 2P', 'Nunito Sans', system-ui, sans-serif;
   line-height: 1.4;
   margin: 0;
@@ -64,11 +66,15 @@ ul {
   padding: 0;
 }
 
-img { max-width: 100%; display: block; }
+img {
+  max-width: 100%;
+  display: block;
+}
 
 :focus {
   outline: none;
 }
+
 :focus-visible {
   outline: 3px solid var(--color-accent);
   outline-offset: 3px;
@@ -112,7 +118,15 @@ header h1::before {
   background:
     radial-gradient(circle 0.08em at 60% 33%, var(--color-bg) 100%, transparent 101%),
     var(--color-accent);
-  clip-path: polygon(100% 74%, 44% 51%, 100% 27%, 100% 0%, 0% 0%, 0% 100%, 100% 100%);
+  clip-path: polygon(
+    100% 74%,
+    44% 51%,
+    100% 27%,
+    100% 0%,
+    0% 0%,
+    0% 100%,
+    100% 100%
+  );
   animation: chomp 0.6s steps(1, end) infinite;
 }
 
@@ -134,26 +148,26 @@ main {
   font-weight: 600;
 }
 
-section:first-of-type {
+main > section:first-of-type {
   background: var(--color-surface-2);
   border: 2px solid var(--color-border);
   border-radius: var(--radius);
   padding: var(--space-3);
 }
 
-section:first-of-type h2 {
+main > section:first-of-type h2 {
   font-size: 0.9rem;
   color: var(--color-accent);
   margin-bottom: var(--space-2);
 }
 
-section:first-of-type form {
+main > section:first-of-type form {
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
 }
 
-section:first-of-type label[for="busca"] {
+main > section:first-of-type label[for="busca"] {
   font-weight: 700;
   display: block;
   margin-bottom: var(--space-1);
@@ -161,13 +175,18 @@ section:first-of-type label[for="busca"] {
 
 #busca {
   width: 100%;
-  min-height: 2.75rem;
-  padding: 0 var(--space-2);
-  border-radius: var(--radius-pill);
+  min-height: 2.4rem;
+  max-width: 100%;
+  padding: 0.5rem 0.8rem;
   border: 2px solid var(--color-border);
+  border-radius: 0.5rem;
   background: var(--color-bg);
   color: var(--color-text);
-  font-size: 1rem;
+  font: inherit;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  resize: none;
+  overflow-y: hidden;
 }
 
 fieldset {
@@ -227,7 +246,11 @@ fieldset input[type="radio"]:checked + label {
 
 fieldset input[type="radio"]:checked + label::before {
   border-color: var(--color-accent);
-  background: radial-gradient(circle, var(--color-accent) 45%, transparent 46%);
+  background: radial-gradient(
+    circle,
+    var(--color-accent) 45%,
+    transparent 46%
+  );
 }
 
 fieldset input[type="radio"]:focus-visible + label {
@@ -245,10 +268,21 @@ fieldset input[type="radio"]:focus-visible + label {
   display: none;
 }
 
-#quadro > section:nth-of-type(1) { --status-color: var(--color-status-todo); }
-#quadro > section:nth-of-type(2) { --status-color: var(--color-status-progress); }
-#quadro > section:nth-of-type(3) { --status-color: var(--color-status-review); }
-#quadro > section:nth-of-type(4) { --status-color: var(--color-status-done); }
+#quadro > section:nth-of-type(1) {
+  --status-color: var(--color-status-todo);
+}
+
+#quadro > section:nth-of-type(2) {
+  --status-color: var(--color-status-progress);
+}
+
+#quadro > section:nth-of-type(3) {
+  --status-color: var(--color-status-review);
+}
+
+#quadro > section:nth-of-type(4) {
+  --status-color: var(--color-status-done);
+}
 
 #quadro > section {
   min-width: 0;
@@ -273,12 +307,34 @@ fieldset input[type="radio"]:focus-visible + label {
   height: 1.4em;
   flex-shrink: 0;
   background:
-    radial-gradient(circle 0.09em at 35% 42%, var(--color-bg) 100%, transparent 101%),
-    radial-gradient(circle 0.09em at 65% 42%, var(--color-bg) 100%, transparent 101%),
+    radial-gradient(
+      circle 0.09em at 35% 42%,
+      var(--color-bg) 100%,
+      transparent 101%
+    ),
+    radial-gradient(
+      circle 0.09em at 65% 42%,
+      var(--color-bg) 100%,
+      transparent 101%
+    ),
     var(--status-color, var(--color-border));
   clip-path: polygon(
-    0% 50%, 0% 85%, 16% 100%, 33% 85%, 50% 100%, 66% 85%, 83% 100%, 100% 85%, 100% 50%,
-    96.19% 30.87%, 85.36% 14.64%, 69.13% 3.81%, 50% 0%, 30.87% 3.81%, 14.64% 14.64%, 3.81% 30.87%
+    0% 50%,
+    0% 85%,
+    16% 100%,
+    33% 85%,
+    50% 100%,
+    66% 85%,
+    83% 100%,
+    100% 85%,
+    100% 50%,
+    96.19% 30.87%,
+    85.36% 14.64%,
+    69.13% 3.81%,
+    50% 0%,
+    30.87% 3.81%,
+    14.64% 14.64%,
+    3.81% 30.87%
   );
   animation: float 1.8s ease-in-out infinite;
 }
@@ -340,17 +396,41 @@ article p:nth-of-type(2) {
 }
 
 @keyframes chomp {
-  0%, 100% {
-    clip-path: polygon(100% 74%, 44% 51%, 100% 27%, 100% 0%, 0% 0%, 0% 100%, 100% 100%);
+  0%,
+  100% {
+    clip-path: polygon(
+      100% 74%,
+      44% 51%,
+      100% 27%,
+      100% 0%,
+      0% 0%,
+      0% 100%,
+      100% 100%
+    );
   }
+
   50% {
-    clip-path: polygon(100% 53%, 100% 47%, 100% 47%, 100% 0%, 0% 0%, 0% 100%, 100% 100%);
+    clip-path: polygon(
+      100% 53%,
+      100% 47%,
+      100% 47%,
+      100% 0%,
+      0% 0%,
+      0% 100%,
+      100% 100%
+    );
   }
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-0.15em); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.15em);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -362,17 +442,17 @@ article p:nth-of-type(2) {
 
 /* filtros cabem lado a lado sem espremer os alvos de toque */
 @media (min-width: 30em) {
-  section:first-of-type form {
+  main > section:first-of-type form {
     flex-direction: row;
     flex-wrap: wrap;
   }
 
-  section:first-of-type form > label[for="busca"],
+  main > section:first-of-type form > label[for="busca"],
   #busca {
     width: auto;
   }
 
-  section:first-of-type fieldset {
+  main > section:first-of-type fieldset {
     flex: 1 1 16rem;
   }
 }
@@ -396,4 +476,60 @@ article p:nth-of-type(2) {
   main {
     padding-inline: var(--space-5);
   }
+}
+
+select,
+button {
+  min-height: 2.75rem;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-border);
+  font: inherit;
+}
+
+select {
+  padding: 0 var(--space-2);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+button {
+  padding: 0 var(--space-2);
+  background: var(--color-accent);
+  color: var(--color-accent-ink);
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+main > section:first-of-type form > label[for="ordenacao"] {
+  font-weight: 700;
+  align-self: center;
+}
+
+#ordenacao {
+  width: 100%;
+}
+
+#limpar-filtros {
+  width: 100%;
+}
+
+@media (min-width: 30em) {
+  #ordenacao,
+  #limpar-filtros {
+    width: auto;
+  }
+}
+
+/* Remove somente o contorno da opção "A fazer".
+   O círculo continua funcionando normalmente. */
+fieldset input[type="radio"]#a-fazer:checked + label {
+  border-color: var(--color-border);
 }
