@@ -8,33 +8,54 @@ export function renderizarEstado(estado, tarefasVisiveis) {
 
   if (estado.carregamento === 'carregando') {
     quadro.hidden = true;
-    status.textContent = 'Carregando tarefas...';
+    status.textContent = 'CONNECTING TO MISSION DATABASE...';
     return;
   }
 
   if (estado.carregamento === 'erro') {
     quadro.hidden = true;
-    status.textContent = estado.erro || 'Não foi possível carregar as tarefas.';
+    status.textContent = estado.erro || 'DATABASE CONNECTION FAILED.';
     return;
   }
 
   if (estado.tarefas.length === 0) {
     quadro.hidden = true;
-    status.textContent = 'Nenhuma tarefa cadastrada na origem.';
+    status.textContent = 'NO MISSIONS REGISTERED IN THE DATABASE.';
     return;
   }
 
   renderizarTarefas(tarefasVisiveis);
   quadro.hidden = false;
 
+  const resultCount = document.getElementById('result-count');
+  if (resultCount) {
+    resultCount.textContent = `${tarefasVisiveis.length} / ${estado.tarefas.length} MISSIONS`;
+  }
+
   if (tarefasVisiveis.length === 0) {
-    status.textContent = 'Nenhuma tarefa encontrada para os critérios selecionados. Altere ou limpe os filtros.';
+    status.textContent = 'RADAR CLEAR. NO MISSION MATCHES THESE PARAMETERS.';
     return;
   }
 
-  const quantidadeVisivel = tarefasVisiveis.length;
-  const quantidadeTotal = estado.tarefas.length;
-  const textoTarefa = quantidadeVisivel === 1 ? 'tarefa' : 'tarefas';
+  status.textContent = `RADAR LOCKED // ${tarefasVisiveis.length} MISSION(S) DETECTED.`;
 
-  status.textContent = `${quantidadeVisivel} de ${quantidadeTotal} ${textoTarefa}.`;
+  atualizarMetricas(estado.tarefas);
+}
+
+function atualizarMetricas(tarefas) {
+  const total = document.getElementById('metric-total');
+  const active = document.getElementById('metric-active');
+  const completed = document.getElementById('metric-completed');
+
+  const quantidadeAtiva = tarefas.filter((tarefa) =>
+    tarefa.status === 'andamento' || tarefa.status === 'revisao'
+  ).length;
+
+  const quantidadeConcluida = tarefas.filter((tarefa) =>
+    tarefa.status === 'concluida'
+  ).length;
+
+  if (total) total.textContent = String(tarefas.length).padStart(2, '0');
+  if (active) active.textContent = String(quantidadeAtiva).padStart(2, '0');
+  if (completed) completed.textContent = String(quantidadeConcluida).padStart(2, '0');
 }
